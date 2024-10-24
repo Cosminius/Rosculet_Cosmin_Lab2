@@ -17,5 +17,6 @@ namespace Rosculet_Cosmin_Laborator2.Data
         public DbSet<Rosculet_Cosmin_Laborator2.Models.Book> Book { get; set; } = default!;
         public DbSet<Rosculet_Cosmin_Laborator2.Models.Publisher> Publisher { get; set; } = default!;
         public DbSet<Rosculet_Cosmin_Laborator2.Models.Author> Author { get; set; } = default!;
+        public DbSet<Rosculet_Cosmin_Laborator2.Models.Category> Category { get; set; } = default!;
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rosculet_Cosmin_Laborator2.Data;
 
@@ -11,9 +12,11 @@ using Rosculet_Cosmin_Laborator2.Data;
 namespace Rosculet_Cosmin_Laborator2.Migrations
 {
     [DbContext(typeof(Rosculet_Cosmin_Laborator2Context))]
-    partial class Rosculet_Cosmin_Laborator2ContextModelSnapshot : ModelSnapshot
+    [Migration("20241025111731_BookCategory")]
+    partial class BookCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

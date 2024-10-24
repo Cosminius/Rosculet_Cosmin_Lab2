@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Rosculet_Cosmin_Laborator2.Data;
 using Rosculet_Cosmin_Laborator2.Models;
 
-namespace Rosculet_Cosmin_Laborator2.Pages.Books
+namespace Rosculet_Cosmin_Laborator2.Pages.Categories
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace Rosculet_Cosmin_Laborator2.Pages.Books
         }
 
         [BindProperty]
-        public Book Book { get; set; } = default!;
+        public Category Category { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,18 +29,15 @@ namespace Rosculet_Cosmin_Laborator2.Pages.Books
                 return NotFound();
             }
 
-            var book = await _context.Book
-               .Include(b => b.Author)
-               .Include(b => b.Publisher)
-               .FirstOrDefaultAsync(m => m.ID == id);
+            var category = await _context.Category.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (book == null)
+            if (category == null)
             {
                 return NotFound();
             }
             else
             {
-                Book = book;
+                Category = category;
             }
             return Page();
         }
@@ -52,11 +49,11 @@ namespace Rosculet_Cosmin_Laborator2.Pages.Books
                 return NotFound();
             }
 
-            var book = await _context.Book.FindAsync(id);
-            if (book != null)
+            var category = await _context.Category.FindAsync(id);
+            if (category != null)
             {
-                Book = book;
-                _context.Book.Remove(Book);
+                Category = category;
+                _context.Category.Remove(Category);
                 await _context.SaveChangesAsync();
             }
 
