@@ -1,4 +1,5 @@
-﻿namespace Rosculet_Cosmin_Laborator2.Models.ViewModels
+﻿using Rosculet_Cosmin_Laborator2.Models;
+namespace Rosculet_Cosmin_Laborator2.Models.ViewModels
 {
     public class CategoryIndexData
     {
